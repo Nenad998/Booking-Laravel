@@ -27,7 +27,7 @@
 <body>
 <header>
     <div class="search-admin">
-        <form action="/" id="search-form">
+        <form action="/admin" id="search-form">
             <input id="inp-search" type="text"
                    placeholder=" Pretraži..."
                    name="search">

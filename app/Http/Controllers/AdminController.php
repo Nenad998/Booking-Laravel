@@ -135,7 +135,8 @@ class AdminController extends Controller
 
     public function edit_room(Request $request, $house_id) //method for editing room
     {
-        $data=$request->all();
+        $data=request()->only(['name','image','description','price','equipment','beds','contact']);
+        
         if(isset($request['image'])){
             if($request->hasFile('image')) {
                 $files = $request->file('image');
@@ -152,7 +153,7 @@ class AdminController extends Controller
         $data['image'] = json_encode($images);
         $data['house_id']=$house_id;
         $room= Room::find($house_id);
-        $room->fill($request->except(['_token']));
+        $room->fill($data);
         $room->save();
         return redirect('admin')->with('success', 'uspesno editovanje sobe');
     }

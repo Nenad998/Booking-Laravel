@@ -57,14 +57,18 @@
         @if (!Auth::user())   <li><a href="/login">Uloguj se</a></li>
         <li><a href="/register">Registruj se</a></li>  @endif
 
-        @auth   <li> <a href="{{ route('logout') }}"
+        @auth  
+        <li><a href="/reservations_users">Moje rezervacije</a></li>
+        <li> <a href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Odjavi se
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST">
                 @csrf
-            </form>  </li>  @endauth
+            </form>  </li> 
+            
+            @endauth
 
     </div>
 </div>

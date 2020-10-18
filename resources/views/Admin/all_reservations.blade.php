@@ -15,7 +15,7 @@
         </tr>
 
         @foreach($reservations as $reservation)
-
+        @if(is_object($reservation->room))
 
             <tr class="all_tr">
                 <td class="all_td">{{$reservation->user->name}}</td>
@@ -25,7 +25,7 @@
                 <td class="all_td">{{$reservation->price}}</td>
 
             </tr>
-
+           @endif
         @endforeach
 
     </table>

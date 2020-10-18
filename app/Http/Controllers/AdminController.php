@@ -117,7 +117,7 @@ class AdminController extends Controller
         $house->fill($data);
         $house->image=$data['image'];
         $house->save();
-        return redirect('admin')->with('success', 'uspesno editovanje kuce');
+        return redirect('single_house/'. $id)->with('success', 'uspesno editovanje kuce');
     }
 
     public function delete_house($id) //method for delete house

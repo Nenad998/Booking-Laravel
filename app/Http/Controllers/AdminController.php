@@ -30,7 +30,7 @@ class AdminController extends Controller
             'name'=>'required|min:5',
             'address'=>'max:30|min:5|required'
         ]);
-        $data=$request->all();
+        $data=request()->only(['name','image','description','address']);      
         if(isset($request['image'])){
             if($request->hasFile('image')){
                 $file=$request->file('image');
@@ -101,7 +101,7 @@ class AdminController extends Controller
 
     public function edit_house(Request $request, $id) //method for editing house
     {
-        $data=$request->all();
+        $data=request()->only(['name','image','description','address']);
         if(isset($request['image'])){
             if($request->hasFile('image')){
                 $file=$request->file('image');
@@ -114,7 +114,7 @@ class AdminController extends Controller
         }
         $data['user_id']=auth()->user()->id;
         $house= House::find($id);
-        $house->fill($request->except(['_token']));
+        $house->fill($data);
         $house->image=$data['image'];
         $house->save();
         return redirect('admin')->with('success', 'uspesno editovanje kuce');

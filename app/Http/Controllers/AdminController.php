@@ -66,7 +66,7 @@ class AdminController extends Controller
         $this->validate($request,[
             'name'=>'required|min:5',
         ]);
-        $data=request()->all();
+        $data=request()->only(['name','image','description','price','equipment','beds','contact']);
         if(isset($request['image'])){
             if($request->hasFile('image')) {
                 $files = $request->file('image');

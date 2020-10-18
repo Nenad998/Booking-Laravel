@@ -13,7 +13,7 @@
                 <div class="contact-form_add">
 
 
-                    <form action="{{route('admin.edit_room_post',$room->id)}}" method="post">
+                    <form action="{{route('admin.edit_room_post',$room->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
 
                         <div class="input-fields_add">

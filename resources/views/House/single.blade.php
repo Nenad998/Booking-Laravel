@@ -16,11 +16,14 @@
     <div class="main">
 
         @foreach($rooms as $room)
-
+        
+          @php
+            $images=json_decode($room->image);
+          @endphp
 
             <div class="houses">
                 <hr>
-                <img id="house_img" src="/images/room1.jpg">
+                <img id="house_img" src="/images/{{$images[0]}}">
 
 
                 <h3><a class="name_house" href="{{route('room.single', $room->id)}}">{{$room->name}}</a></h3>

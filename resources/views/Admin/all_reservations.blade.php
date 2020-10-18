@@ -7,11 +7,11 @@
 
     <table class="all_table">
         <tr class="all_tr">
-            <th class="all_th">Users</th>
-            <th class="all_th">House name</th>
-            <th class="all_th">Room name</th>
+            <th class="all_th">Korisnici</th>
+            <th class="all_th">Ime kuce</th>
+            <th class="all_th">Ime sobe</th>
             <th class="all_th">Period</th>
-            <th class="all_th">Price</th>
+            <th class="all_th">Cena sobe</th>
         </tr>
 
         @foreach($reservations as $reservation)

@@ -1,4 +1,5 @@
 @extends('layouts.lay')
+@section('title') <title>Registracija</title>@stop
 
 @section('content')
     <div class="contact_main_login">

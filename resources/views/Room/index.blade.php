@@ -1,4 +1,5 @@
 @extends('layouts.lay')
+@section('title') <title>Soba</title>@stop
 @section('content')
 
 

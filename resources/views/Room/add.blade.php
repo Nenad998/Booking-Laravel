@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title') <title>Admin | dodaj sobu</title>@stop
 @section('content')
 
 

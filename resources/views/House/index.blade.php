@@ -1,4 +1,5 @@
 @extends('layouts.lay')
+@section('title') <title>Pocetna</title>@stop
 @section('content')
 <img class="home_img" src="/images/logo.png">
 

@@ -1,4 +1,5 @@
 @extends('layouts.lay')
+@section('title') <title>Kontakt</title>@stop
 @section('content')
 
 

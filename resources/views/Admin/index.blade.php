@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title') <title>Ovo je strana</title>@stop
+@section('title') <title>Admin | pocetna</title>@stop
 
 @section('content')
 

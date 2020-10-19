@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-
+@section('title') <title>Admin | sve rezervacije</title>@stop
 @section('content')
 
 

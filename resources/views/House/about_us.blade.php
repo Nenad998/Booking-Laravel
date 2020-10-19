@@ -1,4 +1,5 @@
 @extends('layouts.lay')
+@section('title') <title>O nama</title>@stop
 @section('content')
 
 

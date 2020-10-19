@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title') <title>Admin | soba</title>@stop
 @section('content')
 
     <img class="img_admin" src="/images/{{$house->image}}">

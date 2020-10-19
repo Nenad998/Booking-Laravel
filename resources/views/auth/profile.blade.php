@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title') <title>Admin | vlasnik kuce</title>@stop
 @section('content')
 
 

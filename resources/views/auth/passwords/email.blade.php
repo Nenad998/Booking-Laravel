@@ -10,12 +10,12 @@
     @endif
 
     <div class="form-container">
-        <form method="POST" action="{{ route('password.email') }}" class="form-wrap">
+        <form method="get" action="/reset_password" class="form-wrap">
             @csrf
 
-            <h2>Reset password</h2>
+            <h2>Restartuj lozinku</h2>
             <div class="form-box">
-                <input type="email" placeholder="Enter Email" class=" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <input type="email" placeholder="Unesi email" class=" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                 @error('email')
                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -24,7 +24,7 @@
 
             </div>
             <div class="form-submit">
-                <button type="submit">Send</button>
+                <button type="submit">Posalji</button>
             </div>
         </form>
     </div>

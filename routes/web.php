@@ -49,4 +49,6 @@ Route::post('edit_room_post/{house_id}', 'AdminController@edit_room')->name('adm
 Route::get('delete_room/{id}', 'AdminController@delete_room')->name('admin.delete_room');
 Route::get('/all_reservations', 'AdminController@admin_reservations')->name('all_reservations');
 
+//Route::get('/reset_password', 'AdminController@reset_pass');
+
 

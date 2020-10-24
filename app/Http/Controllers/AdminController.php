@@ -170,4 +170,27 @@ class AdminController extends Controller
         $reservations= Reservation::get();
         return view('Admin.all_reservations', compact('reservations'));
     }
+    /*******
+    
+    this part of code ins't work on local machine 
+    
+    public function reset_pass()
+    {
+        $user=User::where('email',request()->email)->first();
+        if(!$user){
+            return back()->with('warning', 'Email ne postoji u bazi');
+        }
+      $password='booking'.rand(1,9).rand(1,9).rand(1,9).rand(1,9);
+      Mail::send('mails.forgot_pass',['password'=>$password],function($message) use ($user){
+         $message->from('nenadstaniskovic3@gmail.com');
+         $message->subject('Restart lozinke');
+         $message->to($user->email);
+      });
+      $user->password=bcrypt($password);
+      $user->save();
+      return back()->with('success', 'Promena lozinke poslata na Vas email');
+
+    }   
+    
+    *******/
 }

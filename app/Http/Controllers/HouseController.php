@@ -24,7 +24,7 @@ class HouseController extends Controller
 
     public function single($id) ////method for view single house and their rooms
     {
-        $house=House::find($id);
+        $house=House::findOrFail($id);
         $rooms= Room::where('house_id', $house->id)->paginate(2);
         return view('House.single',compact('house', 'rooms'));
 
@@ -32,7 +32,7 @@ class HouseController extends Controller
 
     public function single_room($id) //method for view single room
     {
-        $room= Room::find($id);
+        $room= Room::findOrFail($id);
         return view('Room.index', compact('room'));
    }
 
@@ -48,7 +48,7 @@ class HouseController extends Controller
 
     public function reservation($id) //method for view reservation form
     {
-         $room=Room::find($id);
+         $room=Room::findOrFail($id);
          return view('Room.reservation_room', compact('room'));
     }
 

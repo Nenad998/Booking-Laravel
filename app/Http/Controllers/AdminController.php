@@ -50,7 +50,7 @@ class AdminController extends Controller
 
     public function single($id)  //method for view single house and their rooms
     {
-        $house=House::find($id);
+        $house=House::findOrFail($id);
         $rooms= Room::where('house_id', $house->id)->get();
         return view('Admin.single',compact('house', 'rooms'));
 
@@ -89,13 +89,13 @@ class AdminController extends Controller
 
     public function single_room($id) //method for view single room
     {
-        $room= Room::find($id);
+        $room= Room::findOrFail($id);
         return view('Admin.single_room', compact('room'));
     }
 
     public function edit_house_view($id) //method for view editing house
     {
-        $house=House::find($id);
+        $house=House::findOrFail($id);
         return view('Admin.edit_house', compact('house'));
     }
 
@@ -122,14 +122,14 @@ class AdminController extends Controller
 
     public function delete_house($id) //method for delete house
     {
-        $house=House::find($id);
+        $house=House::findOrFail($id);
         $house= House::where('id', $house->id)->delete();  //radice i bez varijable $house??
         return redirect('admin')->with('success', 'uspesno brisanje kuce');
     }
 
     public function edit_room_view($id) //method for view editing room
     {
-        $room=Room::find($id);
+        $room=Room::findOrFail($id);
         return view('Admin.edit_room', compact('room'));
     }
 
@@ -160,7 +160,7 @@ class AdminController extends Controller
 
     public function delete_room($id) //method for delete room
     {
-        $room=Room::find($id);
+        $room=Room::findOrFail($id);
         $room= Room::where('id', $room->id)->delete();
         return redirect('admin')->with('success', 'uspesno brisanje sobe');
     }

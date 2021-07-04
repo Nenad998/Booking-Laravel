@@ -35,20 +35,20 @@ Route::get('/room/single/{id}', 'HouseController@single_room')->name('room.singl
 
 
 Route::get('/admin', 'AdminController@index')->middleware(['auth','admin']);
-Route::get('/house/add', 'AdminController@add');
-Route::post('/house/store','AdminController@store');
-Route::get('/single_house/{id}','AdminController@single')->name('admin.single_house');
-Route::get('/add_room/{house}', 'AdminController@add_room');
-Route::post('/add_room_post/{house_id}', 'AdminController@store_room');
-Route::get('single_room/{id}', 'AdminController@single_room')->name('admin.single_room');
-Route::get('edit_house/{id}', 'AdminController@edit_house_view')->name('admin.edit_house');
-Route::post('store_edit/{id}', 'AdminController@edit_house')->name('admin.store_edit');
-Route::get('delete_house/{id}', 'AdminController@delete_house')->name('admin.delete_house');
-Route::get('edit_room/{id}', 'AdminController@edit_room_view')->name('admin.edit_room');
-Route::post('edit_room_post/{house_id}', 'AdminController@edit_room')->name('admin.edit_room_post');
-Route::get('delete_room/{id}', 'AdminController@delete_room')->name('admin.delete_room');
-Route::get('/all_reservations', 'AdminController@admin_reservations')->name('all_reservations');
+Route::get('/house/add', 'AdminController@add')->middleware(['auth','admin']);
+Route::post('/house/store','AdminController@store')->middleware(['auth','admin']);
+Route::get('/single_house/{id}','AdminController@single')->name('admin.single_house')->middleware(['auth','admin']);
+Route::get('/add_room/{house}', 'AdminController@add_room')->middleware(['auth','admin']);
+Route::post('/add_room_post/{house_id}', 'AdminController@store_room')->middleware(['auth','admin']);
+Route::get('single_room/{id}', 'AdminController@single_room')->name('admin.single_room')->middleware(['auth','admin']);
+Route::get('edit_house/{id}', 'AdminController@edit_house_view')->name('admin.edit_house')->middleware(['auth','admin']);
+Route::post('store_edit/{id}', 'AdminController@edit_house')->name('admin.store_edit')->middleware(['auth','admin']);
+Route::get('delete_house/{id}', 'AdminController@delete_house')->name('admin.delete_house')->middleware(['auth','admin']);
+Route::get('edit_room/{id}', 'AdminController@edit_room_view')->name('admin.edit_room')->middleware(['auth','admin']);
+Route::post('edit_room_post/{house_id}', 'AdminController@edit_room')->name('admin.edit_room_post')->middleware(['auth','admin']);
+Route::get('delete_room/{id}', 'AdminController@delete_room')->name('admin.delete_room')->middleware(['auth','admin']);
+Route::get('/all_reservations', 'AdminController@admin_reservations')->name('all_reservations')->middleware(['auth','admin']);
 
-//Route::get('/reset_password', 'AdminController@reset_pass');
+//Route::get('/reset_password', 'AdminController@reset_pass')->middleware(['auth','admin']);
 
 
